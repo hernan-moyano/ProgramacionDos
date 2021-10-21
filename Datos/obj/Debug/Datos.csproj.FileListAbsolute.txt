@@ -1,0 +1,11 @@
+F:\PROYECTOS\CARRERA\ProgramacionDos\Datos\bin\Debug\Datos.dll
+F:\PROYECTOS\CARRERA\ProgramacionDos\Datos\bin\Debug\Datos.pdb
+F:\PROYECTOS\CARRERA\ProgramacionDos\Datos\bin\Debug\Entidades.dll
+F:\PROYECTOS\CARRERA\ProgramacionDos\Datos\bin\Debug\System.Data.SqlClient.dll
+F:\PROYECTOS\CARRERA\ProgramacionDos\Datos\bin\Debug\Entidades.pdb
+F:\PROYECTOS\CARRERA\ProgramacionDos\Datos\bin\Debug\System.Data.SqlClient.xml
+F:\PROYECTOS\CARRERA\ProgramacionDos\Datos\obj\Debug\Datos.csproj.AssemblyReference.cache
+F:\PROYECTOS\CARRERA\ProgramacionDos\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+F:\PROYECTOS\CARRERA\ProgramacionDos\Datos\obj\Debug\Datos.csproj.CopyComplete
+F:\PROYECTOS\CARRERA\ProgramacionDos\Datos\obj\Debug\Datos.dll
+F:\PROYECTOS\CARRERA\ProgramacionDos\Datos\obj\Debug\Datos.pdb

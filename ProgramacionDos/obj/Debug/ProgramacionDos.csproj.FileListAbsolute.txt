@@ -1,0 +1,12 @@
+F:\PROYECTOS\CARRERA\ProgramacionDos\ProgramacionDos\obj\Debug\ProgramacionDos.csproj.AssemblyReference.cache
+F:\PROYECTOS\CARRERA\ProgramacionDos\ProgramacionDos\obj\Debug\ProgramacionDos.MDIParentInicial.resources
+F:\PROYECTOS\CARRERA\ProgramacionDos\ProgramacionDos\obj\Debug\ProgramacionDos.Properties.Resources.resources
+F:\PROYECTOS\CARRERA\ProgramacionDos\ProgramacionDos\obj\Debug\ProgramacionDos.csproj.GenerateResource.cache
+F:\PROYECTOS\CARRERA\ProgramacionDos\ProgramacionDos\obj\Debug\ProgramacionDos.csproj.CoreCompileInputs.cache
+F:\PROYECTOS\CARRERA\ProgramacionDos\ProgramacionDos\bin\Debug\ProgramacionDos.exe.config
+F:\PROYECTOS\CARRERA\ProgramacionDos\ProgramacionDos\bin\Debug\ProgramacionDos.exe
+F:\PROYECTOS\CARRERA\ProgramacionDos\ProgramacionDos\bin\Debug\ProgramacionDos.pdb
+F:\PROYECTOS\CARRERA\ProgramacionDos\ProgramacionDos\obj\Debug\ProgramacionDos.exe
+F:\PROYECTOS\CARRERA\ProgramacionDos\ProgramacionDos\obj\Debug\ProgramacionDos.pdb
+F:\PROYECTOS\CARRERA\ProgramacionDos\ProgramacionDos\obj\Debug\ProgramacionDos.FormAlumno.resources
+F:\PROYECTOS\CARRERA\ProgramacionDos\ProgramacionDos\obj\Debug\ProgramacionDos.FormDocente.resources
