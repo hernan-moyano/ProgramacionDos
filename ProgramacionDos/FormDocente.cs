@@ -29,7 +29,6 @@ namespace ProgramacionDos
             dgvDocentes.Columns[4].HeaderText = "Sexo";
             dgvDocentes.Columns[5].HeaderText = "Materia";
             dgvDocentes.Columns[6].HeaderText = "Legajo";
-            dgvDocentes.Columns[4].Width = 40;
            LlenarDGVDocente();
         }
 
@@ -46,15 +45,30 @@ namespace ProgramacionDos
             if ( dds.Tables[0].Rows.Count > 0)
             {
                 foreach (DataRow ddr in dds.Tables[0].Rows)
-                { 
+                {
+                    //cambiar valor visible de sexo
+                    if (ddr[4].ToString() == "M")
+                    {
+                        ddr[4] = "Masculino";
+                    }
+                    if (ddr[4].ToString() == "F")
+                    {
+                        ddr[4] = "Femenino";
+                    }
+                    if (ddr[4].ToString() == "X")
+                    {
+                        ddr[4] = "Otro";
+                    }
                     //Lo que quieres mostrar esta en dr[0].ToString(), dr[1].ToString(),etc.
-                    dgvDocentes.Rows.Add(ddr[0], ddr[1], ddr[2], Convert.ToDateTime(ddr[3]).ToShortDateString(), ddr[4],ddr[5], ddr[6]);
+                    dgvDocentes.Rows.Add(ddr[0], ddr[1], ddr[2], Convert.ToDateTime(ddr[3]).ToShortDateString(), ddr[4], ddr[5], ddr[6]);
                 }
             }
             else
                 lblMensaje.Text = "No hay docentes cargados en el sistema";
+
         }
-       
+
+
         private void TxtBox_a_Obj() //Prepara el objeto a enviar a la capa de Negocio
         {
                 objEntDocen.Nombre = txtNombre.Text;
@@ -72,6 +86,7 @@ namespace ProgramacionDos
             txtApellido.Text = string.Empty;
             txtDni.Text = string.Empty;
             dtpNacimiento.Value = DateTime.Now;
+            rbX.Checked = true;
             cmbMateria.Text = string.Empty;
             txtLegajo.Text = string.Empty;
         }
@@ -83,10 +98,25 @@ namespace ProgramacionDos
         //    txtDni.Text = dds.Tables[0].Rows[0]["DNI"].ToString();
         //    txtLegajo.Text = dds.Tables[0].Rows[0]["Legajo"].ToString();
         //}
+        private void Obj_a_Txt()
+        {
+            txtNombre.Text = objEntDocen.Nombre.ToString();
+            txtApellido.Text = objEntDocen.Apellido.ToString();
+            txtDni.Text = objEntDocen.Dni.ToString();
+            dtpNacimiento.Value = objEntDocen.FechNac;
+            cmbMateria.Text = objEntDocen.Materia.ToString();
+            txtLegajo.Text = objEntDocen.Legajo.ToString();
+            Dgv_Rb(objEntDocen.Sexo);
+        }
 
         private char ValorSexo()
         {
             char ValorSexo = char.Parse("X");
+            if (this.rbX.Checked)
+            {
+                ValorSexo = char.Parse("X");
+
+            }
             if (this.rbF.Checked)
             {
                 ValorSexo = char.Parse("F");
@@ -98,14 +128,32 @@ namespace ProgramacionDos
             return ValorSexo;
         }
 
-        private void Obj_a_Txt()
+        private void Dgv_Rb(object sender)
         {
-            txtNombre.Text = objEntDocen.Nombre.ToString();
-            txtApellido.Text = objEntDocen.Apellido.ToString();
-            txtDni.Text = objEntDocen.Dni.ToString();
-            dtpNacimiento.Value = objEntDocen.FechNac;
-            cmbMateria.Text = objEntDocen.Materia.ToString();
-            txtLegajo.Text = objEntDocen.Legajo.ToString();
+            if (dgvDocentes.CurrentRow.Cells[4].FormattedValue.Equals("Otro"))
+            {
+                rbX.Checked = true;
+            }
+            else
+            {
+                rbX.Checked = false;
+            }
+            if (dgvDocentes.CurrentRow.Cells[4].FormattedValue.Equals("Masculino"))
+            {
+                rbM.Checked = true;
+            }
+            else
+            {
+                rbM.Checked = false;
+            }
+            if (dgvDocentes.CurrentRow.Cells[4].FormattedValue.Equals("Femenino"))
+            {
+                rbF.Checked = true;
+            }
+            else
+            {
+                rbF.Checked = false;
+            }
         }
 
         private void Dgv_a_Obj()
@@ -126,11 +174,12 @@ namespace ProgramacionDos
                 {
                     objEntDocen.FechNac = Convert.ToDateTime(dgvDocentes.CurrentRow.Cells[3].Value);
                 }
-                if (dgvDocentes.CurrentRow.Cells[4].Value.ToString() != string.Empty)
-                {
-                    objEntDocen.Sexo = Convert.ToChar(dgvDocentes.CurrentRow.Cells[4].Value);
-                }
-                if (dgvDocentes.CurrentRow.Cells[5].Value.ToString() != string.Empty)
+            // Reemplazado por metodo Dgv_Rb()
+            //if (dgvDocentes.CurrentRow.Cells[4].Value.ToString() != string.Empty)
+            //{
+            //    objEntDocen.Sexo = Convert.ToChar(dgvDocentes.CurrentRow.Cells[4].Value);
+            //}
+            if (dgvDocentes.CurrentRow.Cells[5].Value.ToString() != string.Empty)
                 {
                     objEntDocen.Materia = Convert.ToString(dgvDocentes.CurrentRow.Cells[5].Value);
                 }
@@ -141,6 +190,7 @@ namespace ProgramacionDos
                 }
 
         }
+
 
         //para los eventos de botones
         private void EligeError(int Grabados)

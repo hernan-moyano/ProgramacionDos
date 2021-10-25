@@ -34,6 +34,7 @@ namespace ProgramacionDos
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.groupBoxA = new System.Windows.Forms.GroupBox();
+            this.rbX = new System.Windows.Forms.RadioButton();
             this.cmbCarrera = new System.Windows.Forms.ComboBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -97,6 +98,7 @@ namespace ProgramacionDos
             // 
             // groupBoxA
             // 
+            this.groupBoxA.Controls.Add(this.rbX);
             this.groupBoxA.Controls.Add(this.cmbCarrera);
             this.groupBoxA.Controls.Add(this.txtApellido);
             this.groupBoxA.Controls.Add(this.label7);
@@ -118,6 +120,18 @@ namespace ProgramacionDos
             this.groupBoxA.Size = new System.Drawing.Size(765, 160);
             this.groupBoxA.TabIndex = 12;
             this.groupBoxA.TabStop = false;
+            // 
+            // rbX
+            // 
+            this.rbX.AutoSize = true;
+            this.rbX.Checked = true;
+            this.rbX.Location = new System.Drawing.Point(643, 38);
+            this.rbX.Name = "rbX";
+            this.rbX.Size = new System.Drawing.Size(45, 17);
+            this.rbX.TabIndex = 15;
+            this.rbX.TabStop = true;
+            this.rbX.Text = "Otro";
+            this.rbX.UseVisualStyleBackColor = true;
             // 
             // cmbCarrera
             // 
@@ -193,22 +207,20 @@ namespace ProgramacionDos
             // rbF
             // 
             this.rbF.AutoSize = true;
-            this.rbF.Location = new System.Drawing.Point(557, 36);
+            this.rbF.Location = new System.Drawing.Point(551, 38);
             this.rbF.Name = "rbF";
             this.rbF.Size = new System.Drawing.Size(71, 17);
             this.rbF.TabIndex = 5;
-            this.rbF.TabStop = true;
             this.rbF.Text = "Femenino";
             this.rbF.UseVisualStyleBackColor = true;
             // 
             // rbM
             // 
             this.rbM.AutoSize = true;
-            this.rbM.Location = new System.Drawing.Point(457, 36);
+            this.rbM.Location = new System.Drawing.Point(457, 38);
             this.rbM.Name = "rbM";
             this.rbM.Size = new System.Drawing.Size(73, 17);
             this.rbM.TabIndex = 4;
-            this.rbM.TabStop = true;
             this.rbM.Text = "Masculino";
             this.rbM.UseVisualStyleBackColor = true;
             // 
@@ -402,5 +414,6 @@ namespace ProgramacionDos
         private System.Windows.Forms.DataGridViewTextBoxColumn Legajo;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.RadioButton rbX;
     }
 }

@@ -27,7 +27,6 @@ namespace ProgramacionDos
             dgvAlumnos.Columns[2].HeaderText = "DNI";
             dgvAlumnos.Columns[3].HeaderText = "Nacimiento";
             dgvAlumnos.Columns[4].HeaderText = "Sexo";
-            dgvAlumnos.Columns[4].Width = 40;
             dgvAlumnos.Columns[5].HeaderText = "Carrera";
             dgvAlumnos.Columns[6].HeaderText = "Legajo";            
             LlenarDGVAlumno();
@@ -47,6 +46,19 @@ namespace ProgramacionDos
             {
                 foreach (DataRow ddr in dds.Tables[0].Rows)
                 {
+                    //cambiar valor visible de sexo
+                    if (ddr[4].ToString() == "M")
+                    {
+                        ddr[4] = "Masculino";
+                    }
+                    if (ddr[4].ToString() == "F")
+                    {
+                        ddr[4] = "Femenino";
+                    }
+                    if (ddr[4].ToString() == "X")
+                    {
+                        ddr[4] = "Otro";
+                    }
                     //Lo que quieres mostrar esta en dr[0].ToString(), dr[1].ToString(),etc.
                     dgvAlumnos.Rows.Add(ddr[0], ddr[1], ddr[2], Convert.ToDateTime(ddr[3]).ToShortDateString(), ddr[4], ddr[5], ddr[6]);
 
@@ -74,6 +86,7 @@ namespace ProgramacionDos
             txtApellido.Text = string.Empty;
             txtDni.Text = string.Empty;
             dtpNacimiento.Value = DateTime.Now;
+            rbX.Checked = true;
             cmbCarrera.Text = string.Empty;
             txtLegajo.Text = string.Empty;
         }
@@ -88,7 +101,11 @@ namespace ProgramacionDos
 
         private char ValorSexo()
         {
-            char ValorSexo = char.Parse("X");
+            char ValorSexo = char.Parse("X");        
+            if (this.rbX.Checked)
+            {
+                ValorSexo = char.Parse("X");
+            }
             if (this.rbF.Checked)
             {
                 ValorSexo = char.Parse("F");
@@ -98,6 +115,7 @@ namespace ProgramacionDos
                 ValorSexo = char.Parse("M");
             }
             return ValorSexo;
+
         }
 
         private void Obj_a_Txt()
@@ -108,6 +126,34 @@ namespace ProgramacionDos
             dtpNacimiento.Value = objEntAlum.FechNac;
             cmbCarrera.Text = objEntAlum.Carrera.ToString();
             txtLegajo.Text = objEntAlum.Legajo.ToString();
+            Dgv_Rb(objEntAlum.Sexo);
+        }
+        private void Dgv_Rb(object sender)
+        {
+            if (dgvAlumnos.CurrentRow.Cells[4].FormattedValue.Equals("Otro"))
+            {
+                rbX.Checked = true;
+            }
+            else
+            {
+                rbX.Checked = false;
+            }
+            if (dgvAlumnos.CurrentRow.Cells[4].FormattedValue.Equals("Masculino"))
+            {
+                rbM.Checked = true;
+            }
+            else
+            {
+                rbM.Checked = false;
+            }
+            if (dgvAlumnos.CurrentRow.Cells[4].FormattedValue.Equals("Femenino"))
+            {
+                rbF.Checked = true;
+            }
+            else
+            {
+                rbF.Checked = false;
+            }
         }
 
         private void Dgv_a_Obj()
@@ -129,10 +175,11 @@ namespace ProgramacionDos
             {
                 objEntAlum.FechNac = Convert.ToDateTime(dgvAlumnos.CurrentRow.Cells[3].Value);
             }
-            if (dgvAlumnos.CurrentRow.Cells[4].Value.ToString() != string.Empty)
-            {
-                objEntAlum.Sexo = Convert.ToChar(dgvAlumnos.CurrentRow.Cells[4].Value);
-            }
+            // Reemplazado por metodo Dgv_Rb()
+            //if (dgvAlumnos.CurrentRow.Cells[4].Value.ToString() != string.Empty)
+            //{
+            //    objEntAlum.Sexo = Convert.ToChar(dgvAlumnos.CurrentRow.Cells[4].Value);
+            //}
             if (dgvAlumnos.CurrentRow.Cells[5].Value.ToString() != string.Empty)
             {
                 objEntAlum.Carrera = Convert.ToString(dgvAlumnos.CurrentRow.Cells[5].Value);
@@ -286,7 +333,9 @@ namespace ProgramacionDos
         }
 
 
+
         #endregion
+
 
     }
 }

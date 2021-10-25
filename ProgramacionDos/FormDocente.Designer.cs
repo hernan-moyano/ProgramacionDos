@@ -31,8 +31,8 @@ namespace ProgramacionDos
         {
             this.components = new System.ComponentModel.Container();
             this.groupBoxA = new System.Windows.Forms.GroupBox();
+            this.rbX = new System.Windows.Forms.RadioButton();
             this.btnLimpiar = new System.Windows.Forms.Button();
-            this.lblMensaje = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.cmbMateria = new System.Windows.Forms.ComboBox();
             this.btnModificar = new System.Windows.Forms.Button();
@@ -51,8 +51,8 @@ namespace ProgramacionDos
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblMensaje = new System.Windows.Forms.Label();
             this.dgvDocentes = new System.Windows.Forms.DataGridView();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,6 +60,7 @@ namespace ProgramacionDos
             this.Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBoxA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocentes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -67,6 +68,7 @@ namespace ProgramacionDos
             // 
             // groupBoxA
             // 
+            this.groupBoxA.Controls.Add(this.rbX);
             this.groupBoxA.Controls.Add(this.btnLimpiar);
             this.groupBoxA.Controls.Add(this.btnEliminar);
             this.groupBoxA.Controls.Add(this.cmbMateria);
@@ -93,6 +95,18 @@ namespace ProgramacionDos
             this.groupBoxA.TabIndex = 1;
             this.groupBoxA.TabStop = false;
             // 
+            // rbX
+            // 
+            this.rbX.AutoSize = true;
+            this.rbX.Checked = true;
+            this.rbX.Location = new System.Drawing.Point(295, 178);
+            this.rbX.Name = "rbX";
+            this.rbX.Size = new System.Drawing.Size(45, 17);
+            this.rbX.TabIndex = 18;
+            this.rbX.TabStop = true;
+            this.rbX.Text = "Otro";
+            this.rbX.UseVisualStyleBackColor = true;
+            // 
             // btnLimpiar
             // 
             this.btnLimpiar.Location = new System.Drawing.Point(531, 129);
@@ -102,14 +116,6 @@ namespace ProgramacionDos
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
-            // lblMensaje
-            // 
-            this.lblMensaje.AutoSize = true;
-            this.lblMensaje.Location = new System.Drawing.Point(35, 221);
-            this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(0, 13);
-            this.lblMensaje.TabIndex = 16;
             // 
             // btnEliminar
             // 
@@ -203,11 +209,10 @@ namespace ProgramacionDos
             // rbF
             // 
             this.rbF.AutoSize = true;
-            this.rbF.Location = new System.Drawing.Point(198, 178);
+            this.rbF.Location = new System.Drawing.Point(191, 178);
             this.rbF.Name = "rbF";
             this.rbF.Size = new System.Drawing.Size(71, 17);
             this.rbF.TabIndex = 5;
-            this.rbF.TabStop = true;
             this.rbF.Text = "Femenino";
             this.rbF.UseVisualStyleBackColor = true;
             // 
@@ -218,7 +223,6 @@ namespace ProgramacionDos
             this.rbM.Name = "rbM";
             this.rbM.Size = new System.Drawing.Size(73, 17);
             this.rbM.TabIndex = 4;
-            this.rbM.TabStop = true;
             this.rbM.Text = "Masculino";
             this.rbM.UseVisualStyleBackColor = true;
             // 
@@ -276,6 +280,14 @@ namespace ProgramacionDos
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre:";
             // 
+            // lblMensaje
+            // 
+            this.lblMensaje.AutoSize = true;
+            this.lblMensaje.Location = new System.Drawing.Point(35, 221);
+            this.lblMensaje.Name = "lblMensaje";
+            this.lblMensaje.Size = new System.Drawing.Size(0, 13);
+            this.lblMensaje.TabIndex = 16;
+            // 
             // dgvDocentes
             // 
             this.dgvDocentes.AllowUserToAddRows = false;
@@ -295,10 +307,6 @@ namespace ProgramacionDos
             this.dgvDocentes.Size = new System.Drawing.Size(725, 150);
             this.dgvDocentes.TabIndex = 11;
             this.dgvDocentes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDocentes_CellClick);
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
             // 
             // Nombre
             // 
@@ -334,6 +342,10 @@ namespace ProgramacionDos
             // 
             this.Legajo.HeaderText = "Legajo";
             this.Legajo.Name = "Legajo";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // FormDocente
             // 
@@ -389,5 +401,6 @@ namespace ProgramacionDos
         private System.Windows.Forms.DataGridViewTextBoxColumn Sexo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Materia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Legajo;
+        private System.Windows.Forms.RadioButton rbX;
     }
 }

@@ -12,7 +12,7 @@ namespace Datos
     {
         #region atributos
         public SqlConnection conexion;
-        public string cadenaConexion = @"Data Source=DESKTOP-3H5AFF1;Initial Catalog=programaciondos-capas;Integrated Security=True";
+        public string cadenaConexion = @"Data Source=HP-HERNAN;Initial Catalog=programaciondos-capas;Integrated Security=True";
         #endregion
 
         #region Constructor
